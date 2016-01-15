@@ -1,0 +1,6 @@
+Code run by Eric Beauchamp
+Environment variable UWHPSC is /home/futon/Programming/uwhpsc
+Environment variable MYHPSC is /home/futon/Programming/myhpsc
+Imported numpy ok
+Imported matplotlib ok
+** Error importing pylab
