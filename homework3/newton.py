@@ -15,7 +15,7 @@ def solve(fvals, x0, debug=False):
     x=x0
 
     if (debug):
-        print "Initial guess: x = %20.15e" % x0
+        print "Initial guess: x = %22.15e" % x0
     
     for i in range(0,maxiter):
         
@@ -30,7 +30,7 @@ def solve(fvals, x0, debug=False):
         x = x-deltaf # Updates the new x.
         
         if (debug):
-            print "After %s iterations, x = %20.15e" % (i+1, x)    
+            print "After %s iterations, x = %22.15e" % (i+1, x)    
         
     return x, i
 
