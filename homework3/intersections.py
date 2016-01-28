@@ -6,40 +6,54 @@ Developed by Eric Beauchamp
 
 import newton
 import numpy as np
+import matplotlib.pyplot as plt
 
-def gvals(x):
+def g1vals(x):
     """
-    Return the values of g1(x) - g2(x), and g1'(x) - g2'(x),
+    Return the values of g1(x) and g1'(x)
     to solve with Newton's Method
     """
     g1 = x*np.cos(np.pi*x)
     g1p = np.cos(np.pi*x) - (np.pi*x*np.sin(np.pi*x))
+
+    return g1, g1p    
     
+def g2vals(x):
+    """
+    Return the values of g2(x) and g2'(x) to solve with Newton's method.
+    """
     g2 = 1. - 0.6*x**2
     g2p = -1.2*x
     
-    gdiff = g1-g2
-    gpdiff = g1p-g2p
-    return gdiff, gpdiff  
+    return g2, g2p  
 
-def gvals2(x):
+def gdiffvals(x):
     """
-    Return the values of g1(x) - g2(x), and g1'(x) - g2'(x),
-    to solve with Newton's Method
+    Differences betwen g1(x) and g2(x)
     """
-    g1 = np.sin(x)
-    g1p = np.cos(x)
+    return g1vals(x)[0]-g2vals(x)[0], g1vals(x)[1]-g2vals(x)[1]
+
+x0 = [-3., -2., -1., -0.5, 1., 2., 1.6]
+xvals = np.zeros(len(x0))
+yvals = np.zeros(len(x0))
     
-    g2 = 1. - x**2
-    g2p = -2.*x
-    
-    gdiff = g1-g2
-    gpdiff = g1p-g2p
-    return gdiff, gpdiff  
-    
-for x0 in [-0.5, 0.5]:#[-3., -2., -1., -0.5, 1., 2.]:
+for i in range(0,len(x0)):
     print " "
-    x, iters = newton.solve(gvals2, x0, debug=True)
-    print "With initial guess x0 = %22.15e" %x0
+    x, iters = newton.solve(gdiffvals, x0[i], debug=False)
+    xvals[i] = x
+    yvals[i] = g1vals(x)[0]
+    
+    print "With initial guess x0 = %22.15e" %x0[i]
     print "      solve returns x = %22.15e after %s iterations" %(x, iters)
-    print "        g1(x) - g2(x) = %22.15e" %gvals(x)[0]
+    print "        g1(x) - g2(x) = %22.15e" %gdiffvals(x)[0]
+
+x = np.linspace(-5.,5.,1000)
+y1 = g1vals(x)[0]
+y2 = g2vals(x)[0]
+plt.clf()
+plt.plot(x,y1,'r-', x,y2, 'b-', xvals,yvals, 'ko')
+plt.show()
+
+plt.title("Intersections between g1(x) and g2(x)")
+plt.savefig('intersections.png')
+print "Plot saved as intersections.png"
