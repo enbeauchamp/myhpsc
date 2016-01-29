@@ -24,7 +24,7 @@ program test_quartic
     xstars = (/1.1d0, 1.01d0, 1.001d0 /)
 	
 	do jtest=1,3
-		eps = epss(jtest)
+		eps = epss(jtest)ls
 		call set_epsilon(eps)
 		
 		do itest=1,3
