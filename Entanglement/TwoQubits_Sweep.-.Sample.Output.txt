@@ -1,0 +1,27 @@
+-----------------------------------------------------------
+Alpha is divided equally into 11 points (10 intervals).
+Each angle is divided equally into 11 points (10 intervals).
+
+>> [alpha, Max] = twoqubits_sweep(10,10)
+Elapsed time is 589.788265 seconds.
+
+alpha =
+
+  Columns 1 through 8
+
+         0    0.1000    0.2000    0.3000    0.4000    0.5000    0.6000    0.7000
+
+  Columns 9 through 11
+
+    0.8000    0.9000    1.0000
+
+
+Max =
+
+  Columns 1 through 8
+
+    2.0000    2.0323    2.1443    2.2921    2.4800    2.6361    2.7466    2.8017
+
+  Columns 9 through 11
+
+    2.7466    2.5404    2.0000

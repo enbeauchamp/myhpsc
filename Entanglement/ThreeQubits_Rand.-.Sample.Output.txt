@@ -1,0 +1,74 @@
+-------------------------------------------------------
+For 2 divisions of alpha, and 2 samples for each angle:
+
+>> [alpha, Max] = threequbits(2,2)
+Elapsed time is 0.526430 seconds.
+
+alpha =
+
+         0    0.5000    1.0000
+
+
+Max =
+
+    3.4368    2.2779    3.4913
+
+
+-------------------------------------------------------
+10 divisions of alpha, 2 samples for each angle:
+
+>> [alpha, Max] = threequbits(10,2)
+Elapsed time is 0.145945 seconds.
+
+alpha =
+
+  Columns 1 through 8
+
+         0    0.1000    0.2000    0.3000    0.4000    0.5000    0.6000    0.7000
+
+  Columns 9 through 11
+
+    0.8000    0.9000    1.0000
+
+
+Max =
+
+  Columns 1 through 8
+
+    2.8087    2.7885    2.6548    2.4065    2.2643    2.4970    2.7345    2.9042
+
+  Columns 9 through 11
+
+    2.8506    2.4108    2.7129
+
+-------------------------------------------------------
+10 divisions of alpha, 5 samples for each angle:
+
+>> [alpha, Max] = threequbits(10,5)
+Elapsed time is 5717.255385 seconds.
+
+alpha =
+
+  Columns 1 through 8
+
+         0    0.1000    0.2000    0.3000    0.4000    0.5000    0.6000    0.7000
+
+  Columns 9 through 11
+
+    0.8000    0.9000    1.0000
+
+
+Max =
+
+  Columns 1 through 8
+
+    3.8657    3.7886    3.5569    3.1706    3.4190    4.0416    4.4831    4.6719
+
+  Columns 9 through 11
+
+    4.4892    3.6733    3.8696
+
+-------------------------------------------------------
+10 divisions of alpha, 10 samples for each angle:
+
+...
